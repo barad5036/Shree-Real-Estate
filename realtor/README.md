@@ -40,7 +40,7 @@ https://user-images.githubusercontent.com/74545192/195051897-365da939-a071-450c-
 
 1. In Netlify, choose **Add new site → Import an existing project** and connect the `barad5036/Shree-Real-Estate` GitHub repository.
 2. Leave the base directory empty. The root `netlify.toml` installs and builds the React app from `realtor/`, publishes `realtor/build`, and routes client-side URLs to `index.html`.
-3. To use the API, first deploy the Express app in `backend/` to a Node.js host and configure its environment variables there: `MONGO_URI`, `JWT_SECRET`, `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, `CLOUDINARY_API_SECRET`, and `CLIENT_URL` (your Netlify site URL).
+3. To use the API, first deploy the Express app in `backend/` to a Node.js host and configure its environment variables there: `MONGO_URI`, `JWT_SECRET`, `JWT_EXPIRE` (for example, `7d`), `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, `CLOUDINARY_API_SECRET`, and `CLIENT_URL` (your Netlify site URL).
 4. In Netlify, open **Site configuration → Environment variables** and add `REACT_APP_API_URL` with the backend API URL ending in `/api` (for example, `https://your-api.example.com/api`). Trigger a new deploy after saving it.
 
 Netlify hosts the React frontend; it does not run the Express server or MongoDB database from this repository. Keep backend credentials on the backend host, not in frontend environment variables.
