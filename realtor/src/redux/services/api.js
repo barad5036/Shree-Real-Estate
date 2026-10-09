@@ -12,7 +12,7 @@ const buildQueryString = (params = {}) => {
 export const backendAPI = createApi({
   reducerPath: "backendAPI",
   baseQuery: fetchBaseQuery({
-    baseUrl: "/api",
+    baseUrl: process.env.REACT_APP_API_URL || "/api",
     prepareHeaders: (headers, { getState }) => {
       const token = getState().auth.token;
       if (token) {

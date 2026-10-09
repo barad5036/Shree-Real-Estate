@@ -1,0 +1,8 @@
+[build]
+  command = "npm --prefix realtor ci && npm --prefix realtor run build"
+  publish = "realtor/build"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
