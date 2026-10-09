@@ -16,7 +16,7 @@ const run = async () => {
   await mongoose.connect(uri);
   console.log("✓ Connected to MongoDB");
 
-  const hashedPassword = await bcrypt.hash("Test@123", 10);
+  const plainPassword = "Test@123";
 
   const usersToUpsert = [
     {
@@ -58,7 +58,7 @@ const run = async () => {
   for (const u of usersToUpsert) {
     const existing = await User.findOne({ email: u.email });
     if (existing) {
-      existing.password = hashedPassword;
+      existing.password = plainPassword;
       existing.role = u.role;
       existing.isVerified = true;
       if (u.companyName) existing.companyName = u.companyName;
@@ -68,7 +68,7 @@ const run = async () => {
     } else {
       await User.create({
         ...u,
-        password: hashedPassword,
+        password: plainPassword,
       });
       console.log(`✓ Created new user [${u.role}]: ${u.email} -> password: Test@123`);
     }

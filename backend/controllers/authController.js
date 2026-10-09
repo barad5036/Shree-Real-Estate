@@ -64,8 +64,8 @@ const login = asyncHandler(async (req, res) => {
     throw new Error("Email and password are required");
   }
 
-  // Explicitly select password (it's excluded by default)
-  const user = await User.findOne({ email }).select("+password");
+  const normalizedEmail = String(email).trim().toLowerCase();
+  const user = await User.findOne({ email: normalizedEmail }).select("+password");
   if (!user) {
     res.status(401);
     throw new Error("Invalid email or password");

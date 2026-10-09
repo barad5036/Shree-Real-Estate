@@ -19,7 +19,7 @@ const LoginForm = () => {
     event.preventDefault();
     setIsLoading(true);
 
-    const enteredEmail = emailInputRef.current.value;
+    const enteredEmail = emailInputRef.current.value.trim().toLowerCase();
     const enteredPassword = passwordInputRef.current.value;
 
     const formData = { email: enteredEmail, password: enteredPassword };
