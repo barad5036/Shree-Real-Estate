@@ -33,7 +33,7 @@ const seedData = async () => {
     const adminUser = await User.create({
       name: "Admin User",
       email: "admin@example.com",
-      password: "password123",
+      password: "Test@123",
       role: "admin",
       phone: "+91 9876543210",
       isVerified: true,
@@ -42,7 +42,7 @@ const seedData = async () => {
     const brokerUser = await User.create({
       name: "Rajesh Sharma",
       email: "broker@example.com",
-      password: "password123",
+      password: "Test@123",
       role: "broker",
       phone: "+91 9820012345",
       isVerified: true,
@@ -64,16 +64,16 @@ const seedData = async () => {
     const buyerUser = await User.create({
       name: "Pooja Patel",
       email: "buyer@example.com",
-      password: "password123",
+      password: "Test@123",
       role: "buyer",
       phone: "+91 9811122233",
       isVerified: true,
     });
 
     console.log("✓ Created 3 users:");
-    console.log("  - Admin:  admin@example.com / password123");
-    console.log("  - Broker: broker@example.com / password123");
-    console.log("  - Buyer:  buyer@example.com / password123");
+    console.log("  - Admin:  admin@example.com / Test@123");
+    console.log("  - Broker: broker@example.com / Test@123");
+    console.log("  - Buyer:  buyer@example.com / Test@123");
 
     console.log("Creating sample properties...");
 
