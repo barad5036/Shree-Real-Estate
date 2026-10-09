@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 // Legacy component — now redirects to the new agents marketplace

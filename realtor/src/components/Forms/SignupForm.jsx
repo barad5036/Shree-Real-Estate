@@ -45,9 +45,9 @@ const SignupForm = () => {
   const content = isLoading ? "Sending Request..." : "Create Account";
 
   return (
-    <>
-      <div className="font-Poppins pt-24 md:pt-32 lg:pt-40 flex justify-center lg:justify-between px-4 md:px-16 lg:px-20">
-        <div className="bg-white px-4 md:px-7 py-8 w-full lg:w-1/2 rounded-[30px] lg:rounded-[0px] lg:rounded-l-[50px] shadow-md lg:shadow">
+    <div className="font-Poppins pt-24 md:pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+      <div className="bg-white rounded-3xl shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
+        <div className="px-6 py-10 sm:px-10 lg:px-12 flex flex-col justify-center">
           <div className="flex flex-col items-center pt-5">
             <h2 className="text-xl font-medium mb-4 ">
               Create Your Free Account
@@ -126,17 +126,26 @@ const SignupForm = () => {
             </button>
           </form>
         </div>
-        <div className="hidden lg:block w-1/2 ml-12 ">
-          <div>
-            <img
-              alt="real estate"
-              className="w-full h-[40rem] rounded-r-[50px]"
-              src={SignupImage}
-            />
+        <div className="relative min-h-[280px] md:min-h-[500px] w-full bg-slate-100 overflow-hidden">
+          <img
+            alt="Shree Real Estate"
+            className="w-full h-full object-cover absolute inset-0 transition-transform duration-700 hover:scale-105"
+            src={SignupImage}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-8 text-white">
+            <span className="text-xs uppercase tracking-widest text-blue-200 font-semibold mb-1">
+              Join Shree Real Estate
+            </span>
+            <h3 className="text-xl sm:text-2xl font-bold mb-1">
+              Start Your Real Estate Journey
+            </h3>
+            <p className="text-xs sm:text-sm text-gray-200">
+              Create an account as a Buyer or certified Broker in seconds.
+            </p>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

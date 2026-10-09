@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useGetAgentsQuery } from "../../redux/services/api";
 import { HiOutlineLocationMarker, HiOutlineSearch } from "react-icons/hi";
 import { MdVerified } from "react-icons/md";
-import { FaStar, FaBuilding, FaBriefcase } from "react-icons/fa";
+import { FaStar, FaBuilding } from "react-icons/fa";
 import CustomDropdown from "../../components/UI/CustomDropdown";
 
 // ── Skeleton card ─────────────────────────────────────────────────────────────

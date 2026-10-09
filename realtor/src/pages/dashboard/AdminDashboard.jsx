@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
-import { MdDelete, MdVisibility, MdCheck, MdClose, MdEmail, MdPhone, MdSearch, MdFilterList, MdCalendarToday } from "react-icons/md";
+import { MdDelete, MdVisibility, MdCheck, MdClose, MdPhone, MdSearch, MdCalendarToday } from "react-icons/md";
 import Footer from "../../components/Layout/Footer";
 import CustomDropdown from "../../components/UI/CustomDropdown";
 import {

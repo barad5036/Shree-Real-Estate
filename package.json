@@ -1,0 +1,11 @@
+{
+  "name": "shree-real-estate",
+  "version": "1.0.0",
+  "description": "Shree Real Estate Marketplace Monorepo Root",
+  "scripts": {
+    "server": "npm --prefix backend start",
+    "client": "npm --prefix realtor start",
+    "seed": "npm --prefix backend run seed",
+    "build:client": "npm --prefix realtor run build"
+  }
+}

@@ -114,7 +114,8 @@ const AddPropertyForm = () => {
       });
       images.forEach(({ file }) => formData.append("images", file));
 
-      const res = await fetch("http://localhost:5000/api/properties", {
+      const apiBase = process.env.REACT_APP_API_URL || "/api";
+      const res = await fetch(`${apiBase}/properties`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
         body: formData,
@@ -159,7 +160,6 @@ const AddPropertyForm = () => {
   }
 
   const inputCls = "border border-silver rounded-xl px-4 py-3 text-sm outline-none focus:border-blue focus:ring-2 focus:ring-blue/20 hover:border-blue w-full font-Poppins bg-white transition-all";
-  const selectCls = `${inputCls} cursor-pointer`;
   const labelCls = "text-xs font-bold text-ash uppercase tracking-wide mb-1.5 block font-Poppins";
 
   return (

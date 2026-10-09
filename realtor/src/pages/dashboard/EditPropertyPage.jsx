@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useHistory, Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { PROPERTY_TYPES, LISTING_TYPES } from "../../data/mockProperties";
-import { useGetPropertyByIdQuery, useUpdatePropertyMutation } from "../../redux/services/api";
+import { useGetPropertyByIdQuery } from "../../redux/services/api";
 import Loader from "../../components/UI/Loader";
 import Footer from "../../components/Layout/Footer";
 import LocationPicker from "../../components/property/LocationPicker";
@@ -16,7 +16,6 @@ const EditPropertyPage = () => {
   const token = useSelector((state) => state.auth.token);
 
   const { data, isLoading } = useGetPropertyByIdQuery(id);
-  const [updateProperty] = useUpdatePropertyMutation();
 
   const [form, setForm] = useState(null);
   const [newImages, setNewImages] = useState([]);
@@ -74,7 +73,8 @@ const EditPropertyPage = () => {
       });
       newImages.forEach((img) => formData.append("images", img));
 
-      const res = await fetch(`http://localhost:5000/api/properties/${id}`, {
+      const apiBase = process.env.REACT_APP_API_URL || "/api";
+      const res = await fetch(`${apiBase}/properties/${id}`, {
         method: "PUT",
         headers: { Authorization: `Bearer ${token}` },
         body: formData,
@@ -95,7 +95,6 @@ const EditPropertyPage = () => {
   };
 
   const inputCls = "border border-silver rounded-lg p-2.5 text-sm outline-none focus:border-blue hover:border-blue w-full font-Poppins transition-all";
-  const selectCls = `${inputCls} cursor-pointer`;
   const labelCls = "text-xs font-semibold text-ash uppercase mb-1 block font-Poppins";
 
   return (

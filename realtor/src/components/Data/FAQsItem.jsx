@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
 const FAQsItem = ({ id, que, ans, isOpen, onToggle }) => (
