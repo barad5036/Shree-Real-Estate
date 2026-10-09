@@ -2,10 +2,14 @@ const cloudinary = require("cloudinary").v2;
 const multer = require("multer");
 const streamifier = require("streamifier");
 
+const cloudName = (process.env.CLOUDINARY_CLOUD_NAME || "hvbjsvwk").trim().replace(/['"]/g, "");
+const apiKey    = (process.env.CLOUDINARY_API_KEY || "937532152271964").trim().replace(/['"]/g, "");
+const apiSecret = (process.env.CLOUDINARY_API_SECRET || "uj3NsOzUA6Y6Z46I-_-Dymdj10s").trim().replace(/['"]/g, "");
+
 cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
+  cloud_name: cloudName,
+  api_key:    apiKey,
+  api_secret: apiSecret,
 });
 
 // Use memory storage — files arrive as buffers, we stream them to Cloudinary
